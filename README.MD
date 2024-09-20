@@ -59,7 +59,7 @@ Vereinfacht wird für $T_i=20$ Grad angenommen:
  [Tabelle 1]
 
 
-$[4]$ $E_h=\sum_{Oktober-Mai}(Em)=(10,3+...+6,8)K*F=113,5K*F$
+$[4]$ $`E_h=\sum_{Oktober-Mai}(Em)=(10,3+...+6,8)K*F=113,5K*F`$
 
 $[5]$ $F=E_h/113,5K=8500Kwh/113,5K=74,9kWh/K$
 
@@ -100,9 +100,9 @@ $[8]$ $E_{p,m}=(T_i,m-T_a,m)*F/COP_{T_a,35}$
 
 Weil Tabelle 2 nicht für jeden Wert von $T_a$ eine Angabe enthälte, wird die Zeile gewählt, die möglichst nahe an der Monatsdurchschnittstemperatur liegt. Das ist in der letzten Spalte von Tabelle 2 vermerkt.
 
-$[9]$ $E_{p,Oktober-Mai}=((10,3+10,8+6,8)/5,63+(14,7+15,4)/5,04+(17,9+19,1+18,5)/4,38)*F=23,57K*F$
+$[9]$ $`E_{p,Oktober-Mai}=((10,3+10,8+6,8)/5,63+(14,7+15,4)/5,04+(17,9+19,1+18,5)/4,38)*F=23,57K*F`$
 
-$[10]$ $SCOP=E_h/E_p=113,5K*F/(23,57K*F)=4,81$
+$[10]$ $`SCOP=E_h/E_p=113,5K*F/(23,57K*F)=4,81`$
 
 Damit ergäbe sich ein Strompreis von Euro $2380/4,81=494,80$, was deutlich günstiger im Vergleich zum Heizen mit Heizöl ist.
 
@@ -111,18 +111,18 @@ Damit ergäbe sich ein Strompreis von Euro $2380/4,81=494,80$, was deutlich gün
 
 Die Wahl der Vorlauftemperatur bestimmt den Wirkungsgrad bzw. Stromverbrauch der Wärmepumpe direkt. Leider kann die Vorlauftemperatur nicht beliebig niedrig gewählt werden. Idealerweise ist sie so hoch, dass die von den Heizkörpern abgestrahle Wärme $E_w$ gerade den Bedarf deckt, den das Haus an die Umwelt verliert $E_h$.
 
-$[8]$ $E_h=(T_i,m-T_a,m)*F$
+$[11]$ $E_h=(T_i,m-T_a,m)*F$
 
-$[9]$ $E_w=(T_v,m-T_i,m)*G$
+$[12]$ $E_w=(T_v,m-T_i,m)*G$
 
-$[10]$ $(T_i,m-T_a,m)*F=(T_v,m-T_i,m)*G$
+$[13]$ $(T_i,m-T_a,m)*F=(T_v,m-T_i,m)*G$
 
 
 
 $G$ ist ein Faktor, der von der installierten Fläche der Heizkörper abhängt. Je mehr Fläche zur Verfügung steht, desto grösser ist G, desto geringer kann die Vorlauftemperatur gewählt werden.
 F und G bestimmen im Wesentlichen, wie effektiv die Wärmepumpe unter gegebenen Bedingungen arbeiten kann, also ob sich der Einbau einer Wärmepumpe wirtschaftlich rechnet. Für die Vorlauftemperatur $T_v$ ergibt sich dann:
 
-$[11]$ $T_v,m=(T_i,m-T_a,m)*F/G+Ti,m$
+$[14]$ $T_v,m=(T_i,m-T_a,m)*F/G+Ti,m$
 
 Um mit den bisherigen Ergebnissen weiterrechnen zu können, wird ein Verbrauch von 1000 Liter Heizöl angenommen.
 
@@ -133,15 +133,15 @@ Zur Ermittlung des Wertes G muss man nun wissen, welche Heizkörper verbaut sind
 Aus diesen Information kann man entnehmen, dass bei einem Altbau von 1970 etwa 20 Liter Heizöl pro Quadratmeter benötigt werden, so dass mit 1000 Liter Heizöl etwa 50 Quadratmetern Wohnfläche beheizt werden können. Weiterhin sind üblicherweise 125W Heizkörperleisung pro Quadratmeter installiert, die bei einer üblichen Vorlauftemperatur von 75 Grad und einer Raumtemperatur von 20 Grad abgegeben werden können. 75Grad Vorlauftemperatur und 20 Grad Raumtemperatur sind die Punkte, bei denen Flächenheizköper üblicherweise bemessen werden.
 Das entspricht einer Heizleistung von $50qm*125W/qm=6.25kW$. Um nun die Energie pro Monat zu berechen, wir dieser Wert mit 24h und 30 Tagen multipliziert und angenommen, dass die Wärmepumpe rund um die Uhr durchläuft. 
 
-Das ergibt $6.25kW*24h*30=4500 kWh$
+Das ergibt $`6.25kW*24h*30=4500 kWh`$
 
-$[12]$ $G=4500kWh/(75-20)Grad=81.8KWh/Grad$
+$[15]$ $G=4500kWh/(75-20)Grad=81.8KWh/Grad$
 
 Das ist ein sehr interessantes Ergebnis, denn $F/G=74.9kWh/81.8kWh=0,91 und nahe bei 1! Die Vorlauftemperatur liegt in diesem Beispiel etwa um x Grad über der Innenraumtemperatur, wenn die Ausstentemperatur um x Grad unter der Innenraumtemperatur liegt. Also -10°C Ausstemperatur ergibt +50°C Vorlauftemperatur.
 
 Setzt man zur Vereinfachung F/G~1, schreibt sich Gleichung 9:
 
-$[13]$ $T_{v,m}=(T_{i,m}-T_{a,m})+T_{i,m}=2*T_{i-m}-T_{a,m}$
+$[16]$ $T_{v,m}=(T_{i,m}-T_{a,m})+T_{i,m}=2*T_{i-m}-T_{a,m}$
 
 Real wird die Vorlauftemperaturhöher sein, denn die Temperatur im Heizkreis sinkt ja durch die Abgabe der Energie und erreicht am Ende des Heizkreises die Rücklauftemperatur. Nimmt man eine Differenz (Spreizung) von 10K an, erhöht sich die mittlere Vorlauftemperatur um etwa 5 Grad und die Spalte $T_v$ lässt sich ausfüllen:
 
@@ -165,18 +165,23 @@ Diese Tabelle stimmt erstmal optimistisch, befinden sich die Vorlauftemperaturen
 
 Eine weitere Ungenauigkeit ist die Annahme, dass Heizkörper ihre Energie proportional zur Temperaturdifferenz $E=G*(T_v-T_i)$ abgeben. Das gilt aber nicht für reale Heizkörper, die eine Energie durch Strahlung und Konvektion an den Raum abgeben. In den Datenblättern der Heizkörper ist zusätzlich ein Exponent n angegeben und die abgegebene Leistung bestimmt bei $T_v=75°C$ $T_i=20°C$ bestimmt sich zu:
 
-$P=P_0*(T/(75-20)K)^n$, wobei n etwa zwischen 1 und 1,5 liegt.
+$`P=P_0*(T/(75-20)K)^n`$, wobei n etwa zwischen 1 und 1,5 liegt.
 
-Ein Heizkörper mit der Nennleistung von $P_0=1kW$ gibt daher, bei halber Vorlauftemperaturdifferenz von 55°C/2=27.5°C und einem n=1,3 nur $P=1kW*(27.5/55)^1,3=0,41kW Leistung ab, also weniger als die Hälfte. Entgegen dem linearen Modell aus $[9]$ muss die Vorlauftemperatur also überproportional steigen, wenn es kälter wird.
+Ein Heizkörper mit der Nennleistung von $P_0=1kW$ gibt daher, bei halber Vorlauftemperaturdifferenz von 55°C/2=27.5°C und einem n=1,3 nur $`P=1kW*(27.5/55)^{1,3}=0,41kW`$ Leistung ab, also weniger als die Hälfte. Entgegen dem linearen Modell aus $[9]$ muss die Vorlauftemperatur also überproportional steigen, wenn es kälter wird.
 
 
 ## Verstärkende Effekte
 
 Wenn die Aussentmperatur sinkt, sinkt nicht nur die Mediumtemperatur (Luft), sondern es muss auch die Vorlauftemperatur entsprechend steigen. Und zwar, wie oben überschlagen, um etwa den gleichen Wert. Das bedeutet, dass ein Abfall von $T_a$ um 1 Grad Celsius einer Temperaturdifferenz von 2 Grad in der Wärmepumpe enstspricht, und somit der COP entsprechend schneller abnimmt. Die Heizkörpergleichung verschlechtert diesen Effekt zusätzlich, und zwar um so stärker, je grösser der Konvektionsanteil bzw. der Exponent n ist.
 
+Eine Erhöhung der Vorlauftemperatur bei konstanter Spreizung (Vorlauftemperatur-Rücklauftemperatur) muss zu einer Erhöhung der Durchflussmenge bzw. des Pumpendrucks im Wasserkreis führen. Wenn der Pumpendruck ein limitierender Faktor ist, muss das durch eine Erhöhung der Vorlauftemperatur ausgegelichen werden, was wiederum zur Verschlechterung des COP beiträgt.
+
 Plant man darüber hinaus den Einsatz von Photovoltaik, wird die Lage noch schwieriger, denn der Winter zeichnet sich ja eben durch die Abwesenheit von viel Sonne aus. Und in den kalten Nächten ist der PV-Anteil am Strom leider null.
 
 Damit wird die Sache schnell unübersichtlich, weshalb im Folgenden ein eine kleines Programm erstellt wird.
+
+
+
 
 # Simulation
 
