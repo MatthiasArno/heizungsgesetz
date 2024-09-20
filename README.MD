@@ -59,7 +59,7 @@ Vereinfacht wird für $T_i=20$ Grad angenommen:
  [Tabelle 1]
 
 
-$[4]$ $E_h=\sum_{Oktober-Mai}(Em)=(10,3+...+6,8)K*F=113,5K*F$
+$[4]$ $`E_h=\sum_{Oktober-Mai}(Em)=(10,3+...+6,8)K*F=113,5K*F`$
 
 $[5]$ $F=E_h/113,5K=8500Kwh/113,5K=74,9kWh/K$
 
@@ -111,18 +111,18 @@ Damit ergäbe sich ein Strompreis von Euro $2380/4,81=494,80$, was deutlich gün
 
 Die Wahl der Vorlauftemperatur bestimmt den Wirkungsgrad bzw. Stromverbrauch der Wärmepumpe direkt. Leider kann die Vorlauftemperatur nicht beliebig niedrig gewählt werden. Idealerweise ist sie so hoch, dass die von den Heizkörpern abgestrahle Wärme $E_w$ gerade den Bedarf deckt, den das Haus an die Umwelt verliert $E_h$.
 
-$[8]$ $E_h=(T_i,m-T_a,m)*F$
+$[11]$ $E_h=(T_i,m-T_a,m)*F$
 
-$[9]$ $E_w=(T_v,m-T_i,m)*G$
+$[12]$ $E_w=(T_v,m-T_i,m)*G$
 
-$[10]$ $(T_i,m-T_a,m)*F=(T_v,m-T_i,m)*G$
+$[13]$ $(T_i,m-T_a,m)*F=(T_v,m-T_i,m)*G$
 
 
 
 $G$ ist ein Faktor, der von der installierten Fläche der Heizkörper abhängt. Je mehr Fläche zur Verfügung steht, desto grösser ist G, desto geringer kann die Vorlauftemperatur gewählt werden.
 F und G bestimmen im Wesentlichen, wie effektiv die Wärmepumpe unter gegebenen Bedingungen arbeiten kann, also ob sich der Einbau einer Wärmepumpe wirtschaftlich rechnet. Für die Vorlauftemperatur $T_v$ ergibt sich dann:
 
-$[11]$ $T_v,m=(T_i,m-T_a,m)*F/G+Ti,m$
+$[14]$ $T_v,m=(T_i,m-T_a,m)*F/G+Ti,m$
 
 Um mit den bisherigen Ergebnissen weiterrechnen zu können, wird ein Verbrauch von 1000 Liter Heizöl angenommen.
 
@@ -135,13 +135,13 @@ Das entspricht einer Heizleistung von $50qm*125W/qm=6.25kW$. Um nun die Energie 
 
 Das ergibt $6.25kW*24h*30=4500 kWh$
 
-$[12]$ $G=4500kWh/(75-20)Grad=81.8KWh/Grad$
+$[15]$ $G=4500kWh/(75-20)Grad=81.8KWh/Grad$
 
 Das ist ein sehr interessantes Ergebnis, denn $F/G=74.9kWh/81.8kWh=0,91 und nahe bei 1! Die Vorlauftemperatur liegt in diesem Beispiel etwa um x Grad über der Innenraumtemperatur, wenn die Ausstentemperatur um x Grad unter der Innenraumtemperatur liegt. Also -10°C Ausstemperatur ergibt +50°C Vorlauftemperatur.
 
 Setzt man zur Vereinfachung F/G~1, schreibt sich Gleichung 9:
 
-$[13]$ $T_{v,m}=(T_{i,m}-T_{a,m})+T_{i,m}=2*T_{i-m}-T_{a,m}$
+$[16]$ $T_{v,m}=(T_{i,m}-T_{a,m})+T_{i,m}=2*T_{i-m}-T_{a,m}$
 
 Real wird die Vorlauftemperaturhöher sein, denn die Temperatur im Heizkreis sinkt ja durch die Abgabe der Energie und erreicht am Ende des Heizkreises die Rücklauftemperatur. Nimmt man eine Differenz (Spreizung) von 10K an, erhöht sich die mittlere Vorlauftemperatur um etwa 5 Grad und die Spalte $T_v$ lässt sich ausfüllen:
 
