@@ -133,7 +133,7 @@ Zur Ermittlung des Wertes G muss man nun wissen, welche Heizkörper verbaut sind
 Aus diesen Information kann man entnehmen, dass bei einem Altbau von 1970 etwa 20 Liter Heizöl pro Quadratmeter benötigt werden, so dass mit 1000 Liter Heizöl etwa 50 Quadratmetern Wohnfläche beheizt werden können. Weiterhin sind üblicherweise 125W Heizkörperleisung pro Quadratmeter installiert, die bei einer üblichen Vorlauftemperatur von 75 Grad und einer Raumtemperatur von 20 Grad abgegeben werden können. 75Grad Vorlauftemperatur und 20 Grad Raumtemperatur sind die Punkte, bei denen Flächenheizköper üblicherweise bemessen werden.
 Das entspricht einer Heizleistung von $50qm*125W/qm=6.25kW$. Um nun die Energie pro Monat zu berechen, wir dieser Wert mit 24h und 30 Tagen multipliziert und angenommen, dass die Wärmepumpe rund um die Uhr durchläuft. 
 
-Das ergibt $6.25kW*24h*30=4500 kWh$
+Das ergibt $`6.25kW*24h*30=4500 kWh`$
 
 $[15]$ $G=4500kWh/(75-20)Grad=81.8KWh/Grad$
 
@@ -174,9 +174,14 @@ Ein Heizkörper mit der Nennleistung von $P_0=1kW$ gibt daher, bei halber Vorlau
 
 Wenn die Aussentmperatur sinkt, sinkt nicht nur die Mediumtemperatur (Luft), sondern es muss auch die Vorlauftemperatur entsprechend steigen. Und zwar, wie oben überschlagen, um etwa den gleichen Wert. Das bedeutet, dass ein Abfall von $T_a$ um 1 Grad Celsius einer Temperaturdifferenz von 2 Grad in der Wärmepumpe enstspricht, und somit der COP entsprechend schneller abnimmt. Die Heizkörpergleichung verschlechtert diesen Effekt zusätzlich, und zwar um so stärker, je grösser der Konvektionsanteil bzw. der Exponent n ist.
 
+Eine Erhöhung der Vorlauftemperatur bei konstanter Spreizung (Vorlauftemperatur-Rücklauftemperatur) muss zu einer Erhöhung der Durchflussmenge bzw. des Pumpendrucks im Wasserkreis führen. Wenn der Pumpendruck ein limitierender Faktor ist, muss das durch eine Erhöhung der Vorlauftemperatur ausgegelichen werden, was wiederum zur Verschlechterung des COP beiträgt.
+
 Plant man darüber hinaus den Einsatz von Photovoltaik, wird die Lage noch schwieriger, denn der Winter zeichnet sich ja eben durch die Abwesenheit von viel Sonne aus. Und in den kalten Nächten ist der PV-Anteil am Strom leider null.
 
 Damit wird die Sache schnell unübersichtlich, weshalb im Folgenden ein eine kleines Programm erstellt wird.
+
+
+
 
 # Simulation
 
