@@ -100,9 +100,9 @@ $[8]$ $E_{p,m}=(T_i,m-T_a,m)*F/COP_{T_a,35}$
 
 Weil Tabelle 2 nicht für jeden Wert von $T_a$ eine Angabe enthälte, wird die Zeile gewählt, die möglichst nahe an der Monatsdurchschnittstemperatur liegt. Das ist in der letzten Spalte von Tabelle 2 vermerkt.
 
-$[9]$ $E_{p,Oktober-Mai}=((10,3+10,8+6,8)/5,63+(14,7+15,4)/5,04+(17,9+19,1+18,5)/4,38)*F=23,57K*F$
+$[9]$ $`E_{p,Oktober-Mai}=((10,3+10,8+6,8)/5,63+(14,7+15,4)/5,04+(17,9+19,1+18,5)/4,38)*F=23,57K*F`$
 
-$[10]$ $SCOP=E_h/E_p=113,5K*F/(23,57K*F)=4,81$
+$[10]$ $`SCOP=E_h/E_p=113,5K*F/(23,57K*F)=4,81`$
 
 Damit ergäbe sich ein Strompreis von Euro $2380/4,81=494,80$, was deutlich günstiger im Vergleich zum Heizen mit Heizöl ist.
 
@@ -165,9 +165,9 @@ Diese Tabelle stimmt erstmal optimistisch, befinden sich die Vorlauftemperaturen
 
 Eine weitere Ungenauigkeit ist die Annahme, dass Heizkörper ihre Energie proportional zur Temperaturdifferenz $E=G*(T_v-T_i)$ abgeben. Das gilt aber nicht für reale Heizkörper, die eine Energie durch Strahlung und Konvektion an den Raum abgeben. In den Datenblättern der Heizkörper ist zusätzlich ein Exponent n angegeben und die abgegebene Leistung bestimmt bei $T_v=75°C$ $T_i=20°C$ bestimmt sich zu:
 
-$P=P_0*(T/(75-20)K)^n$, wobei n etwa zwischen 1 und 1,5 liegt.
+$`P=P_0*(T/(75-20)K)^n`$, wobei n etwa zwischen 1 und 1,5 liegt.
 
-Ein Heizkörper mit der Nennleistung von $P_0=1kW$ gibt daher, bei halber Vorlauftemperaturdifferenz von 55°C/2=27.5°C und einem n=1,3 nur $P=1kW*(27.5/55)^1,3=0,41kW Leistung ab, also weniger als die Hälfte. Entgegen dem linearen Modell aus $[9]$ muss die Vorlauftemperatur also überproportional steigen, wenn es kälter wird.
+Ein Heizkörper mit der Nennleistung von $P_0=1kW$ gibt daher, bei halber Vorlauftemperaturdifferenz von 55°C/2=27.5°C und einem n=1,3 nur $`P=1kW*(27.5/55)^{1,3}=0,41kW`$ Leistung ab, also weniger als die Hälfte. Entgegen dem linearen Modell aus $[9]$ muss die Vorlauftemperatur also überproportional steigen, wenn es kälter wird.
 
 
 ## Verstärkende Effekte
