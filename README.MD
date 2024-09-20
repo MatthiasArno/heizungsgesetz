@@ -59,7 +59,7 @@ Vereinfacht wird für $T_i=20$ Grad angenommen:
  [Tabelle 1]
 
 
-$[4]$ $E_h=\sum_{Oktober-Mai}(Em)_{}=(10,3+...+6,8)K*F=113,5K*F$
+$[4]$ $E_h=\sum_{Oktober-Mai}(Em)=(10,3+...+6,8)K*F=113,5K*F$
 
 $[5]$ $F=E_h/113,5K=8500Kwh/113,5K=74,9kWh/K$
 
