@@ -1,22 +1,3 @@
-
-<!DOCTYPE html>
-   <html lang="en">
-   <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Your Page Title</title>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-     <script type="text/x-mathjax-config">
-       MathJax.Hub.Config({
-         tex2jax: {
-           inlineMath: [['$','$'], ['\\(','\\)']],
-           processEscapes: true
-         }
-       });
-     </script>
-   </head>
-   <body>
-   
 # Inhalt <!-- omit in toc -->
 - [Motivation](#motivation)
 	- [Heizenergiebedarf](#heizenergiebedarf)
@@ -206,10 +187,4 @@ Damit wird die Sache schnell unübersichtlich, weshalb im Folgenden ein eine kle
 Genauere Berechnungen finden sich hier:
 
 [Simulation](src/heizung.ipynb)
-
-
-     
-	</body>
-</html>
-
 
