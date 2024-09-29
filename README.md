@@ -136,7 +136,7 @@ Das ergibt $`6.25kW*24h*30=4500 kWh`$
 
 $[15]$ $G=4500kWh/(75-20)Grad=81.8KWh/Grad$
 
-Das ist ein sehr interessantes Ergebnis, denn $F/G=74.9kWh/81.8kWh=0,91 und nahe bei 1! Die Vorlauftemperatur liegt in diesem Beispiel etwa um x Grad über der Innenraumtemperatur, wenn die Ausstentemperatur um x Grad unter der Innenraumtemperatur liegt. Also -10°C Ausstemperatur ergibt +50°C Vorlauftemperatur.
+Das ist ein sehr interessantes Ergebnis, denn $F/G=74.9kWh/81.8kWh=0,91$ und nahe bei 1! Die Vorlauftemperatur liegt in diesem Beispiel etwa um x Grad über der Innenraumtemperatur, wenn die Ausstentemperatur um x Grad unter der Innenraumtemperatur liegt. Also -10°C Ausstemperatur ergibt +50°C Vorlauftemperatur.
 
 Setzt man zur Vereinfachung F/G~1, schreibt sich Gleichung 9:
 
@@ -184,7 +184,21 @@ Damit wird die Sache schnell unübersichtlich, weshalb im Folgenden ein eine kle
 
 # Simulation
 
-Genauere Berechnungen finden sich hier:
+Genauere Berechnungen und Annahmen finden sich hier: [Simulation](src/heizung.ipynb)
+Das Wesentliche ist im Folgenden zusammengefasst.
 
-[Simulation](src/heizung.ipynb)
+## SCOP im Altbau
+
+Der SCOP in kalten und warmen Wintern liegt um die 3, dem Grenzwert, ab dem Wärmepumpen überhaupt vom Staat gefördert werden. Eine gute Übersicht über Förderbedingungen gibt das Handelsblatt in diesem [Artikel](https://www.handelsblatt.com/vergleich/category/waermepumpen/). Hier wird allerdings die Kennzahl JAZ (Jahresarbeitszahl) verwendet, die entweder mit einem genauen Systemmodell inklusive Speicher- und Leitungsverlusten berechnet oder unter echten Bedingungen gemessen wird. Die JAZ wird deshalb kleiner sein als der hier grob errechnete SCOP.
+
+## PV Anteil im Altbau
+
+Mit 10kWp pro 1000 Liter Heizölverbrauch lässt sich der Strombezug ordentlich reduzieren, entsprechende Speicher vorausgesetzt.
+
+
+
+
+
+
+
 
