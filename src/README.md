@@ -184,7 +184,7 @@ Damit wird die Sache schnell unübersichtlich, weshalb im Folgenden ein eine kle
 
 # Simulation
 
-Genauere Berechnungen und Annahmen finden sich hier: [Simulation](src/heizung.ipynb)
+Genauere Berechnungen und Annahmen finden sich hier: [Simulation](https://github.com/MatthiasArno/heizungsgesetz/blob/main/src/heizung.ipynb)
 Das Wesentliche ist im Folgenden zusammengefasst.
 
 ## SCOP im Altbau
