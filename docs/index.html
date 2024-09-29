@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="inhalt">Inhalt <!-- omit in toc --></h1>
+<ul>
+<li><a href="#motivation">Motivation</a>
+<ul>
+<li><a href="#heizenergiebedarf">Heizenergiebedarf</a></li>
+<li><a href="#heizstab">Heizstab</a></li>
+<li><a href="#heizlast">Heizlast</a></li>
+<li><a href="#wärmepumpe">Wärmepumpe</a></li>
+<li><a href="#wahl-der-vorlauftemperatur">Wahl der
+Vorlauftemperatur</a></li>
+<li><a href="#heizkörpergleichung">Heizkörpergleichung</a></li>
+<li><a href="#verstärkende-effekte">Verstärkende Effekte</a></li>
+</ul></li>
+<li><a href="#simulation">Simulation</a></li>
+</ul>
+<h1 id="motivation">Motivation</h1>
+<p>Als Bewohner eines Altbaus mit Zentralheizung stelle ich mir schon
+länger die Frage, wie der Umstieg auf eine Wärmepumpe gelingen kann. Im
+ersten Schritt wird daher eine kleine Überschlagsrechnung durchgeführt,
+um die relevanten Grössen und Grössenordnungen zu erfassen. Im zweiten
+Schritt wird eine genauere Berechnung programmatisch mit Zeitreihen
+durchgeführt.</p>
+<p>Ich bin kein Heizungsfachmann! Korrekturen und
+Verbesserungsvorschläge sind herzlich willkommen.</p>
+<h2 id="heizenergiebedarf">Heizenergiebedarf</h2>
+<p>Die eingesetzte nutzbare Heizenergie <span
+class="math inline">\(E_h\)</span> entspricht der eingesetzten
+Primärenergie <span class="math inline">\(E_p\)</span> durch Öl 0der
+Gas, multipliziert mit der Effizienz <span
+class="math inline">\(e_h\)</span> der Heizung.</p>
+<p><span class="math inline">\([1]\)</span> <span
+class="math inline">\(E_h=E_p*e_h\)</span></p>
+<p>Bei einer Ölheizung mit 1000 Liter Jahresverbrauch und einer
+Effizienz von 0.85 ergibt sich:</p>
+<p><span class="math inline">\([2]\)</span> <span
+class="math inline">\(E_h=10.000kWh*0.85=8500kWh\)</span></p>
+<p>Als gute Näherung kann man mit 10kWh pro Liter <a
+href="https://de.wikipedia.org/wiki/Heiz%C3%B6l">Erdöl</a> oder <a
+href="https://de.wikipedia.org/wiki/Erdgas#Physikalisch-technische_Eigenschaften">Erdgas</a>
+oder pro Kubikmeter <a
+href="https://de.wikipedia.org/wiki/Erdgas#Physikalisch-technische_Eigenschaften">Erdgas</a>
+rechnen. Unterschiede im Heiz- und Brennwert werden einfach der
+Effizienz <span class="math inline">\(e_h\)</span> der Heizungsanlage
+zugeschrieben. In diesem Beispiel mit <span
+class="math inline">\(e_h=0.85\)</span> gehen 15% der Energie zum
+Schornstein hinaus. Das ist erstmal eine Annahme.</p>
+<h2 id="heizstab">Heizstab</h2>
+<p>Würde man den Öl- oder Gasbrenner durch einen Heizstab ersetzen, der
+praktisch eine Effizienz von <span class="math inline">\(e_h=1\)</span>
+hat, würden dafür 8500kWh Strombezug im Jahr fällig. Rechnet man mit
+0,28 Cent für die Kilwattstunde Strom und 1,00 Euro für den Liter
+Heizöl, so stünden Kosten in Euro von 8500kWh<em>0,28€/kWh=2380 € Strom
+oder 1000l </em>1,00 €/l=1000€ Heizöl zu buche. Ein reiner
+Heizstabbetrieb in einer vorhandenen Zentralheizung ist daher keine gute
+Lösung.</p>
+<h2 id="heizlast">Heizlast</h2>
+<p>Die Heizlast hängt von der Temperatur der Innen- und Aussentemperatur
+ab und kann über Wärmeleitung (Bodenkontakt), Konvektion
+(Luftumströmung) oder Wärmeabstrahlung geschehen. Das hängt stark vom
+Standort und der Beschaffenheit des Hauses ab. Es wird hier nur eine
+ganz einfache lineare Beziehung verwendet und die Heizenergie pro Monat
+berechnet. Anstelle von Grad Celsius wird für Temperaturdifferenzen die
+Einheit Kelvin [K] benutzt.</p>
+<p><span class="math inline">\([3]\)</span> <span
+class="math inline">\(E_m=(T_i,m-T_a,m)*F\)</span>, mit <span
+class="math inline">\(E_m\)</span> in [kWh/Monat] und <span
+class="math inline">\(F\)</span> in [kWh/Monat/K]</p>
+<p>Dabei ist <span class="math inline">\(E_m\)</span> der über den Monat
+m gemittelte Energiebedarf, <span class="math inline">\(T_{i,m}\)</span>
+bzw. <span class="math inline">\(T_{a,m}\)</span> die Innen- und
+Aussentemperatur im Mittel für den Monat m und <span
+class="math inline">\(F\)</span> ein Faktor, der noch zu bestimmen und
+nicht vom Monat abhängig ist.</p>
+<p>Wikipedia liefert die monatlichen <a
+href="https://de.wikipedia.org/wiki/Zeitreihe_der_Lufttemperatur_in_Deutschland">Durchschnittstemperaturen
+von 2001-2020</a> in den 8 Heizmonaten Oktober bis Mai.</p>
+<p>Somit ist: <span class="math inline">\(E_h=\sum(Em)\)</span>, die
+eingesetzte Heizenergie pro Jahr ist die Summe der gemittelten
+monatlichen Heizlasten.</p>
+<p>Vereinfacht wird für <span class="math inline">\(T_i=20\)</span> Grad
+angenommen:</p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(Monat\)</span></th>
+<th><span class="math inline">\(T_i\)</span>[°C]</th>
+<th><span class="math inline">\(T_a\)</span>[°C]</th>
+<th><span class="math inline">\(T_i-T_a\)</span>[K]</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Oktober</td>
+<td>20,0</td>
+<td>9,7</td>
+<td>10,3</td>
+</tr>
+<tr class="even">
+<td>November</td>
+<td>20,0</td>
+<td>5,3</td>
+<td>14,7</td>
+</tr>
+<tr class="odd">
+<td>Dezember</td>
+<td>20,0</td>
+<td>2,1</td>
+<td>17,9</td>
+</tr>
+<tr class="even">
+<td>Januar</td>
+<td>20,0</td>
+<td>0,9</td>
+<td>19,1</td>
+</tr>
+<tr class="odd">
+<td>Februar</td>
+<td>20,0</td>
+<td>1,5</td>
+<td>18,5</td>
+</tr>
+<tr class="even">
+<td>März</td>
+<td>20,0</td>
+<td>4,6</td>
+<td>15,4</td>
+</tr>
+<tr class="odd">
+<td>April</td>
+<td>20,0</td>
+<td>9,2</td>
+<td>10,8</td>
+</tr>
+<tr class="even">
+<td>Mai</td>
+<td>20,0</td>
+<td>13,2</td>
+<td>6,8</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\sum\)</span></td>
+<td></td>
+<td></td>
+<td><strong>113,5</strong></td>
+</tr>
+</tbody>
+</table>
+<p>[Tabelle 1]</p>
+<p><span class="math inline">\([4]\)</span> <span
+class="math inline">\(`E_h=\sum_{Oktober-Mai}(Em)=(10,3+...+6,8)K*F=113,5K*F`\)</span></p>
+<p><span class="math inline">\([5]\)</span> <span
+class="math inline">\(F=E_h/113,5K=8500Kwh/113,5K=74,9kWh/K\)</span></p>
+<p>Mit F lässt sich dann wieder monatsweise die Heizlast berechnen,
+bspw. für den kältesten Monat Januar:</p>
+<p><span class="math inline">\([6]\)</span> <span
+class="math inline">\(E_{Januar}=(20-0,9)K*74,9kWh/K=1430kWh\)</span></p>
+<p>Für den Heizsstab würde das einer mittleren Leistung von <span
+class="math inline">\(1430kWh/(30*24h)=1,99kW\)</span> entsprechen. Das
+entspricht der Leistung von zwei Staubsaugern, die rund um die Uhr
+laufen.</p>
+<h2 id="wärmepumpe">Wärmepumpe</h2>
+<p>Eine Wärmepumpe entzieht einem Medium Energie (Luft, Wasser, Boden).
+Das Verhältnis von bereitgestellter Energie in Form von Wärme zu
+eingesetzer Energie in Form von Strom hängt dabei von der Temperatur des
+Mediums zur Vorlauftemperatur im Heizwasserkreis ab. Der Faktor wird COP
+(Coefficient of Performance) genannt. Die Temperatur des Mediums,
+insbesondere bei Luftwärmepumpen, ist aber nicht konstant, weshalb der
+COP über eine Heizsaison gemittelt und dann als SCOP (Seasonal
+Coefficient of Performance) bezeichnet wird.</p>
+<p>Der Heizenergiebedarf <span class="math inline">\(E_h\)</span>
+reduziert sich um den Faktor des SCOP. Der SCOP ist leider nicht
+konstant (hoch), sondern hängt sehr deutlich vom Betriebspunkt der
+Wärmepumpe ab.</p>
+<p>Der COP wird zur Vergleichbarkeit von Luftwärmepumpen üblicherweise
+bei -7, 2, 7 und 10 oder 12 Grad Mediumtemperatur und
+Vorlauftemperaturen von 35 und 55 Grad bestimmt. Je geringer die
+Temperaturdifferenz, desto höher ist der COP. Ab bestimmten hohen
+Vorlauftemperaturen wird bei manchen Gerätetypen mittels Heizstab
+geboostert, was den COP dann zusätzlich einknicken lässt. Grundsätzlich
+ist der COP aber immer grösser als eins. Mit diesen Angaben des
+Herstellers und Temperaturdurchschnittswerten für die Heizmonate, lässt
+sich ein SCOP berechnen.</p>
+<p>Beispiel für den <span class="math inline">\(COP_{T_a,T_v}\)</span>
+einer modernen Luftwärmepumpe in Abhängigeit der Luftaussentemperatur
+<span class="math inline">\(T_a\)</span> und verschiedenen
+Vorlauftemperaturen <span class="math inline">\(T_v\)</span>. In der
+letzten Spalte sind die Monate eingetragen, für die die
+Luftaussentemperatur <span class="math inline">\(T_a\)</span> [aus
+Tabelle 1] im Monatsmittel in etwa gilt.</p>
+<table>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 23%" />
+<col style="width: 23%" />
+<col style="width: 23%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(T_a\)</span></th>
+<th><span class="math inline">\(T_v=35°C\)</span></th>
+<th><span class="math inline">\(T_v=55°C\)</span></th>
+<th><span class="math inline">\(T_v=75°C\)</span></th>
+<th>Monat(e), die nahe bei <span class="math inline">\(T_a\)</span>
+liegen</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>-7</td>
+<td>3,04</td>
+<td>2,03</td>
+<td>1,50</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>+2</td>
+<td>4,38</td>
+<td>2,50</td>
+<td>1,90</td>
+<td>Dezember, Januar, Februar</td>
+</tr>
+<tr class="odd">
+<td>+7</td>
+<td>5,04</td>
+<td>3,03</td>
+<td>2,00</td>
+<td>November, März</td>
+</tr>
+<tr class="even">
+<td>+10</td>
+<td>5,63</td>
+<td>3,50</td>
+<td>2,10</td>
+<td>Oktober, April, Mai</td>
+</tr>
+</tbody>
+</table>
+<p>[Tabelle 2]</p>
+<p>Bei einer Vorlauftemperatur von 35 Grad und 10 Grad Lufttemperatur
+hat diese Wärmepumpe also einen <span
+class="math inline">\(COP_{+10,35}=5,63\)</span> und erzeugt aus einer
+Kilowattstunde Strom 5,63 Kilowattstunden Heizenergie. Bei -7 Grad
+Lufttemperatur und 75 Grad Vorlauftemperatur stehen nur 1,5
+Kilowattstunden zur Verfügung, also <span
+class="math inline">\(COP_{-7,75}=1,5\)</span>.</p>
+<p>Analog zu <span class="math inline">\([1]\)</span> gilt, dass die
+Heizenergie der eingesetzten Primärenergie (Strom) multipliziert mit dem
+SCOP für die Wärmepumpe ist, der laut Tabelle irgendwo zwischen 1,5 und
+5,63 liegt.</p>
+<p><span class="math inline">\([7]\)</span> <span
+class="math inline">\(E_h=E_p*SCOP\)</span></p>
+<p>Zur Berechnung der Primärenergie (Strom) über die Heizmonate bemüht
+man Gleichung <span class="math inline">\([3]\)</span>, teilt aber den
+Beitrag durch den COP, im Beispiel für 35 Grad Vorlauftemperatur.</p>
+<p><span class="math inline">\([8]\)</span> <span
+class="math inline">\(E_{p,m}=(T_i,m-T_a,m)*F/COP_{T_a,35}\)</span></p>
+<p>Weil Tabelle 2 nicht für jeden Wert von <span
+class="math inline">\(T_a\)</span> eine Angabe enthälte, wird die Zeile
+gewählt, die möglichst nahe an der Monatsdurchschnittstemperatur liegt.
+Das ist in der letzten Spalte von Tabelle 2 vermerkt.</p>
+<p><span class="math inline">\([9]\)</span> <span
+class="math inline">\(`E_{p,Oktober-Mai}=((10,3+10,8+6,8)/5,63+(14,7+15,4)/5,04+(17,9+19,1+18,5)/4,38)*F=23,57K*F`\)</span></p>
+<p><span class="math inline">\([10]\)</span> <span
+class="math inline">\(`SCOP=E_h/E_p=113,5K*F/(23,57K*F)=4,81`\)</span></p>
+<p>Damit ergäbe sich ein Strompreis von Euro <span
+class="math inline">\(2380/4,81=494,80\)</span>, was deutlich günstiger
+im Vergleich zum Heizen mit Heizöl ist.</p>
+<h2 id="wahl-der-vorlauftemperatur">Wahl der Vorlauftemperatur</h2>
+<p>Die Wahl der Vorlauftemperatur bestimmt den Wirkungsgrad bzw.
+Stromverbrauch der Wärmepumpe direkt. Leider kann die Vorlauftemperatur
+nicht beliebig niedrig gewählt werden. Idealerweise ist sie so hoch,
+dass die von den Heizkörpern abgestrahle Wärme <span
+class="math inline">\(E_w\)</span> gerade den Bedarf deckt, den das Haus
+an die Umwelt verliert <span class="math inline">\(E_h\)</span>.</p>
+<p><span class="math inline">\([11]\)</span> <span
+class="math inline">\(E_h=(T_i,m-T_a,m)*F\)</span></p>
+<p><span class="math inline">\([12]\)</span> <span
+class="math inline">\(E_w=(T_v,m-T_i,m)*G\)</span></p>
+<p><span class="math inline">\([13]\)</span> <span
+class="math inline">\((T_i,m-T_a,m)*F=(T_v,m-T_i,m)*G\)</span></p>
+<p><span class="math inline">\(G\)</span> ist ein Faktor, der von der
+installierten Fläche der Heizkörper abhängt. Je mehr Fläche zur
+Verfügung steht, desto grösser ist G, desto geringer kann die
+Vorlauftemperatur gewählt werden. F und G bestimmen im Wesentlichen, wie
+effektiv die Wärmepumpe unter gegebenen Bedingungen arbeiten kann, also
+ob sich der Einbau einer Wärmepumpe wirtschaftlich rechnet. Für die
+Vorlauftemperatur <span class="math inline">\(T_v\)</span> ergibt sich
+dann:</p>
+<p><span class="math inline">\([14]\)</span> <span
+class="math inline">\(T_v,m=(T_i,m-T_a,m)*F/G+Ti,m\)</span></p>
+<p>Um mit den bisherigen Ergebnissen weiterrechnen zu können, wird ein
+Verbrauch von 1000 Liter Heizöl angenommen.</p>
+<p>Somit bleibt <span class="math inline">\(F=74,9kWh/K\)</span> [aus
+5].</p>
+<p>Zur Ermittlung des Wertes G muss man nun wissen, welche Heizkörper
+verbaut sind und welche Daten diese haben. Diese Daten kann man als
+erste Näherung dieser <a
+href="https://www.heizung.de/ratgeber/diverses/heizleistung-berechnen-gruende-und-ablauf.html">Tabelle
+zur Heizleistung</a> entnehmen. Die Quadratmeterzahl, die man
+üblicherweise mit 1000l Heizöl beheizen kann findet sich im <a
+href="https://www.heizung.de/oelheizung/wissen/den-heizoelverbrauch-bestimmen-und-senken.html">Heizölverbrauch</a>.</p>
+<p>Aus diesen Information kann man entnehmen, dass bei einem Altbau von
+1970 etwa 20 Liter Heizöl pro Quadratmeter benötigt werden, so dass mit
+1000 Liter Heizöl etwa 50 Quadratmetern Wohnfläche beheizt werden
+können. Weiterhin sind üblicherweise 125W Heizkörperleisung pro
+Quadratmeter installiert, die bei einer üblichen Vorlauftemperatur von
+75 Grad und einer Raumtemperatur von 20 Grad abgegeben werden können.
+75Grad Vorlauftemperatur und 20 Grad Raumtemperatur sind die Punkte, bei
+denen Flächenheizköper üblicherweise bemessen werden. Das entspricht
+einer Heizleistung von <span
+class="math inline">\(50qm*125W/qm=6.25kW\)</span>. Um nun die Energie
+pro Monat zu berechen, wir dieser Wert mit 24h und 30 Tagen
+multipliziert und angenommen, dass die Wärmepumpe rund um die Uhr
+durchläuft.</p>
+<p>Das ergibt <span class="math inline">\(`6.25kW*24h*30=4500
+kWh`\)</span></p>
+<p><span class="math inline">\([15]\)</span> <span
+class="math inline">\(G=4500kWh/(75-20)Grad=81.8KWh/Grad\)</span></p>
+<p>Das ist ein sehr interessantes Ergebnis, denn <span
+class="math inline">\(F/G=74.9kWh/81.8kWh=0,91\)</span> und nahe bei 1!
+Die Vorlauftemperatur liegt in diesem Beispiel etwa um x Grad über der
+Innenraumtemperatur, wenn die Ausstentemperatur um x Grad unter der
+Innenraumtemperatur liegt. Also -10°C Ausstemperatur ergibt +50°C
+Vorlauftemperatur.</p>
+<p>Setzt man zur Vereinfachung F/G~1, schreibt sich Gleichung 9:</p>
+<p><span class="math inline">\([16]\)</span> <span
+class="math inline">\(T_{v,m}=(T_{i,m}-T_{a,m})+T_{i,m}=2*T_{i-m}-T_{a,m}\)</span></p>
+<p>Real wird die Vorlauftemperaturhöher sein, denn die Temperatur im
+Heizkreis sinkt ja durch die Abgabe der Energie und erreicht am Ende des
+Heizkreises die Rücklauftemperatur. Nimmt man eine Differenz (Spreizung)
+von 10K an, erhöht sich die mittlere Vorlauftemperatur um etwa 5 Grad
+und die Spalte <span class="math inline">\(T_v\)</span> lässt sich
+ausfüllen:</p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(Monat\)</span></th>
+<th><span class="math inline">\(T_v\)</span></th>
+<th><span class="math inline">\(T_a\)</span></th>
+<th><span class="math inline">\(2*T_i-T_a\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Oktober</td>
+<td>35,3</td>
+<td>9,7</td>
+<td>30,3</td>
+</tr>
+<tr class="even">
+<td>November</td>
+<td>39,7</td>
+<td>5,3</td>
+<td>34,7</td>
+</tr>
+<tr class="odd">
+<td>Dezember</td>
+<td>42,9</td>
+<td>2,1</td>
+<td>37,9</td>
+</tr>
+<tr class="even">
+<td>Januar</td>
+<td>44,1</td>
+<td>0,9</td>
+<td>39,1</td>
+</tr>
+<tr class="odd">
+<td>Februar</td>
+<td>43,5</td>
+<td>1,5</td>
+<td>38,5</td>
+</tr>
+<tr class="even">
+<td>März</td>
+<td>40,4</td>
+<td>4,6</td>
+<td>35,4</td>
+</tr>
+<tr class="odd">
+<td>April</td>
+<td>35,8</td>
+<td>9,2</td>
+<td>30,8</td>
+</tr>
+<tr class="even">
+<td>Mai</td>
+<td>31,8</td>
+<td>13,2</td>
+<td>26,8</td>
+</tr>
+</tbody>
+</table>
+<p>[Tabelle 3]</p>
+<p>Diese Tabelle stimmt erstmal optimistisch, befinden sich die
+Vorlauftemperaturen doch näher an 35 als and 55 Grad.</p>
+<h2 id="heizkörpergleichung">Heizkörpergleichung</h2>
+<p>Eine weitere Ungenauigkeit ist die Annahme, dass Heizkörper ihre
+Energie proportional zur Temperaturdifferenz <span
+class="math inline">\(E=G*(T_v-T_i)\)</span> abgeben. Das gilt aber
+nicht für reale Heizkörper, die eine Energie durch Strahlung und
+Konvektion an den Raum abgeben. In den Datenblättern der Heizkörper ist
+zusätzlich ein Exponent n angegeben und die abgegebene Leistung bestimmt
+bei <span class="math inline">\(T_v=75°C\)</span> <span
+class="math inline">\(T_i=20°C\)</span> bestimmt sich zu:</p>
+<p><span class="math inline">\(`P=P_0*(T/(75-20)K)^n`\)</span>, wobei n
+etwa zwischen 1 und 1,5 liegt.</p>
+<p>Ein Heizkörper mit der Nennleistung von <span
+class="math inline">\(P_0=1kW\)</span> gibt daher, bei halber
+Vorlauftemperaturdifferenz von 55°C/2=27.5°C und einem n=1,3 nur <span
+class="math inline">\(`P=1kW*(27.5/55)^{1,3}=0,41kW`\)</span> Leistung
+ab, also weniger als die Hälfte. Entgegen dem linearen Modell aus <span
+class="math inline">\([9]\)</span> muss die Vorlauftemperatur also
+überproportional steigen, wenn es kälter wird.</p>
+<h2 id="verstärkende-effekte">Verstärkende Effekte</h2>
+<p>Wenn die Aussentmperatur sinkt, sinkt nicht nur die Mediumtemperatur
+(Luft), sondern es muss auch die Vorlauftemperatur entsprechend steigen.
+Und zwar, wie oben überschlagen, um etwa den gleichen Wert. Das
+bedeutet, dass ein Abfall von <span class="math inline">\(T_a\)</span>
+um 1 Grad Celsius einer Temperaturdifferenz von 2 Grad in der Wärmepumpe
+enstspricht, und somit der COP entsprechend schneller abnimmt. Die
+Heizkörpergleichung verschlechtert diesen Effekt zusätzlich, und zwar um
+so stärker, je grösser der Konvektionsanteil bzw. der Exponent n
+ist.</p>
+<p>Eine Erhöhung der Vorlauftemperatur bei konstanter Spreizung
+(Vorlauftemperatur-Rücklauftemperatur) muss zu einer Erhöhung der
+Durchflussmenge bzw. des Pumpendrucks im Wasserkreis führen. Wenn der
+Pumpendruck ein limitierender Faktor ist, muss das durch eine Erhöhung
+der Vorlauftemperatur ausgegelichen werden, was wiederum zur
+Verschlechterung des COP beiträgt.</p>
+<p>Plant man darüber hinaus den Einsatz von Photovoltaik, wird die Lage
+noch schwieriger, denn der Winter zeichnet sich ja eben durch die
+Abwesenheit von viel Sonne aus. Und in den kalten Nächten ist der
+PV-Anteil am Strom leider null.</p>
+<p>Damit wird die Sache schnell unübersichtlich, weshalb im Folgenden
+ein eine kleines Programm erstellt wird.</p>
+<h1 id="simulation">Simulation</h1>
+<p>Genauere Berechnungen und Annahmen finden sich hier: <a
+href="src/heizung.ipynb">Simulation</a> Das Wesentliche ist im Folgenden
+zusammengefasst.</p>
+<h2 id="scop-im-altbau">SCOP im Altbau</h2>
+<p>Der SCOP in kalten und warmen Wintern liegt um die 3, dem Grenzwert,
+ab dem Wärmepumpen überhaupt vom Staat gefördert werden. Eine gute
+Übersicht über Förderbedingungen gibt das Handelsblatt in diesem <a
+href="https://www.handelsblatt.com/vergleich/category/waermepumpen/">Artikel</a>.
+Hier wird allerdings die Kennzahl JAZ (Jahresarbeitszahl) verwendet, die
+entweder mit einem genauen Systemmodell inklusive Speicher- und
+Leitungsverlusten berechnet oder unter echten Bedingungen gemessen wird.
+Die JAZ wird deshalb kleiner sein als der hier grob errechnete SCOP.</p>
+<figure>
+<img src="images/scop_2005_2020.png" alt="SCOP 2005-2020" />
+<figcaption aria-hidden="true">SCOP 2005-2020</figcaption>
+</figure>
+<h2 id="pv-anteil-im-altbau">PV Anteil im Altbau</h2>
+<p>Mit 10kWp pro 1000 Liter Heizölverbrauch lässt sich der Strombezug
+ordentlich reduzieren, entsprechende Speicher vorausgesetzt.</p>
+<figure>
+<img src="images/scop_2020_pv.png" alt="SCOP 2020 mit PV" />
+<figcaption aria-hidden="true">SCOP 2020 mit PV</figcaption>
+</figure>
+</body>
+</html>

@@ -191,9 +191,13 @@ Das Wesentliche ist im Folgenden zusammengefasst.
 
 Der SCOP in kalten und warmen Wintern liegt um die 3, dem Grenzwert, ab dem Wärmepumpen überhaupt vom Staat gefördert werden. Eine gute Übersicht über Förderbedingungen gibt das Handelsblatt in diesem [Artikel](https://www.handelsblatt.com/vergleich/category/waermepumpen/). Hier wird allerdings die Kennzahl JAZ (Jahresarbeitszahl) verwendet, die entweder mit einem genauen Systemmodell inklusive Speicher- und Leitungsverlusten berechnet oder unter echten Bedingungen gemessen wird. Die JAZ wird deshalb kleiner sein als der hier grob errechnete SCOP.
 
+![SCOP 2005-2020](images/scop_2005_2020.png)
+
 ## PV Anteil im Altbau
 
 Mit 10kWp pro 1000 Liter Heizölverbrauch lässt sich der Strombezug ordentlich reduzieren, entsprechende Speicher vorausgesetzt.
+
+![SCOP 2020 mit PV](images/scop_2020_pv.png)
 
 
 
