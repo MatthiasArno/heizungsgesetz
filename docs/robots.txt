@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://matthiasarno.github.io/heizungsgesetz/sitemap.xml
